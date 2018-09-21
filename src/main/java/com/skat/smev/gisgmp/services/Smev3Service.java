@@ -40,7 +40,7 @@ public class Smev3Service {
      * @return  возвращает сведения об успешности отправки запроса
      * @throws Exception
      */
-    public String sendINNSingularRequest(RequestModel requestModel) throws ParseException, JAXBException, DatatypeConfigurationException, JsonProcessingException {
+    public String sendExportChargesRequest(RequestModel requestModel) throws ParseException, JAXBException, DatatypeConfigurationException, JsonProcessingException {
         final ExportChargesRequest element = GisgmpPaymentInfoRequestTransformer.createExportChargesRequest(requestModel);
         final String xml = XmlUtil.jaxbObjectToXML(element, ExportChargesRequest.class);
         final String base64request = Base64Util.convertToBase64(xml);
@@ -59,7 +59,7 @@ public class Smev3Service {
      * @return сведения об успешной отправке либо об ошибке отправки
      * @throws Exception
      */
-    public String sendINNSingularResponse(AdapterResponseModel adapterResponse)  {
+    public String sendExportChargesResponse(AdapterResponseModel adapterResponse)  {
         BaseMessageModel baseMessageModel = null;
         String stringMessage = "";
         try {

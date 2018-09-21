@@ -9,49 +9,65 @@ import java.util.List;
  */
 public class RequestModel {
 
-	private String requestId;
-	private String fnsRequestId;
-	private String orgnUl;
-	private String innUl;
-	private String orgName;
-	private String dateBirthFl;
-	private String placeBirth;
-	private String surnameFl;
-	private String nameFl;
-	private String patronymicFl;
-	private String kodVidDoc;
-	private String kodVydDoc;
-	private String vydDoc;
-	private String dateDoc;
-	private String docSeriaNum;
+	/**/// esiaUserInfo
+	private EsiaUserInfoModel esiaUserInfo;
+	/**/
 
+	/**///chargesExportConditions
+	private ChargesConditionsModel chargesConditions;
+	private PayersConditionsModel payersConditions;
+	private PaymentsConditionsModel paymentsConditions;
+	private TimeConditionsModel timeConditions;
+	private RefundsConditionsModel refundsConditions;
+	private String kind;
 
+	private String pageNumber;
+	private String pageLength;
+	private String originatorId;
+	/**/
 	private List<AttachmentModel> attachments;
-
-	public String getRequestId() {
-		return requestId;
-	}
-
-	public String getFnsRequestId() {
-		return fnsRequestId;
-	}
-
-	public String getOrgnUl() { return orgnUl; }
-	public String getInnUl() { return innUl; }
-	public String getOrgName() { return orgName; }
-	public String getDateBirthFl() { return dateBirthFl; }
-	public String getPlaceBirth() { return placeBirth; }
-	public String getSurnameFl() { return surnameFl; }
-	public String getNameFl() { return nameFl; }
-	public String getPatronymicFl() { return patronymicFl; }
-	public String getKodVidDoc() { return kodVidDoc; }
-	public String getKodVydDoc() { return kodVydDoc; }
-	public String getVydDoc() { return vydDoc; }
-	public String getDateDoc() { return dateDoc; }
-	public String getDocSeriaNum() { return docSeriaNum; }
-
 
 	public List<AttachmentModel> getAttachments() {
 		return attachments;
+	}
+
+	public EsiaUserInfoModel getEsiaUserInfo(){
+		return esiaUserInfo;
+	}
+
+	public String getKind() {
+		return kind;
+	}
+
+	public String getPageNumber() {
+		return pageNumber;
+	}
+
+	public String getPageLength(){
+		return pageLength;
+	}
+
+	public String getOriginatorId() {
+		return originatorId;
+	}
+
+	public ChargesConditionsModel getChargesConditions() {
+		return chargesConditions;
+	}
+
+	public PayersConditionsModel getPayersConditions() {
+		return payersConditions;
+	}
+
+	public PaymentsConditionsModel getPaymentsConditions() {
+		return paymentsConditions;
+	}
+
+	public TimeConditionsModel getTimeConditions() {
+		return timeConditions;
+	}
+
+	public RefundsConditionsModel getRefundsConditions() {
+		return refundsConditions;
 	}
 }

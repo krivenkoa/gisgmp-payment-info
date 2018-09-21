@@ -21,7 +21,6 @@ public class GisgmpPaymentInfoRequestTransformer {
 
         // create InnFLReq
         ExportChargesRequest exportChargesReq = exportChargesOF.createExportChargesRequest();
-        exportChargesReq.setId(model.getRequestId());
 
         return exportChargesReq;
     }

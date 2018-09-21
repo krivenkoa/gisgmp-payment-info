@@ -8,8 +8,6 @@
 
 package com.skat.smev.gisgmp.model;
 
-import com.skat.smev.gisgmp.domain.*;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;

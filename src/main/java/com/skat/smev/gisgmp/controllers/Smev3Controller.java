@@ -21,24 +21,24 @@ public class Smev3Controller {
 
     /**
      * Метод преобразования и отправки запроса от ВИС и отправки в СМЭВ-адаптер
-     * @param request модель запроса ИНН ФЛ в формате JSON
+     * @param request модель запроса ГИС ГМП по информации о платежах в формате JSON
      * @return  возвращает сведения об успешности отправки запроса
      * @throws Exception
      */
-    @PostMapping("/innfl/request")
-    public String sendDocRequest(@RequestBody RequestModel request) throws Exception {
-        return smev3Service.sendINNSingularRequest(request);
+    @PostMapping("/payinfo/request")
+    public String sendPaymentInfoRequest(@RequestBody RequestModel request) throws Exception {
+        return smev3Service.sendExportChargesRequest(request);
     }
 
 
     /**
      * Метод для приема ответа от СМЭВ-адаптера, его парсинга и отправки в ВИС
-     * @param adapterResponse модель ответа от СМЭВ-адаптера по ИНН ФЛ
+     * @param adapterResponse модель ответа от СМЭВ-адаптера ГИС ГМП по информации о платежах
      * @return сведения об успешной отправке либо об ошибке отправки
      * @throws Exception
      */
-        @PostMapping("/innfl/response")
-    public String sendDocResponse(@RequestBody AdapterResponseModel adapterResponse) throws Exception {
-        return smev3Service.sendINNSingularResponse(adapterResponse);
+        @PostMapping("/payinfo/response")
+    public String sendPaymentInfoResponse(@RequestBody AdapterResponseModel adapterResponse) throws Exception {
+        return smev3Service.sendExportChargesResponse(adapterResponse);
     }
 }
