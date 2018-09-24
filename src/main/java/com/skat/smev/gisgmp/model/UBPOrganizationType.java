@@ -37,7 +37,7 @@ public class UBPOrganizationType
     extends OrganizationType
 {
 
-    @XmlAttribute(name = "codeUBP", required = true)
+    @XmlAttribute(name = "codeUBP", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.0.1")
     protected String codeUBP;
 
     /**

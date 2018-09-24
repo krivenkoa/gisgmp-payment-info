@@ -56,11 +56,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "LsvTOFKType", namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.0.1")
 public class LsvTOFKType {
 
-    @XmlAttribute(name = "nameTOFK", required = true)
+    @XmlAttribute(name = "nameTOFK", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String nameTOFK;
-    @XmlAttribute(name = "codeTOFK", required = true)
+    @XmlAttribute(name = "codeTOFK", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String codeTOFK;
-    @XmlAttribute(name = "accountNumberTOFK", required = true)
+    @XmlAttribute(name = "accountNumberTOFK", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String accountNumberTOFK;
 
     /**

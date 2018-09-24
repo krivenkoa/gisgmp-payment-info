@@ -116,15 +116,15 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class EsiaUserInfoType {
 
-    @XmlElement(name = "Person")
+    @XmlElement(name = "Person", namespace = "http://www.w3.org/2001/XMLSchema")
     protected EsiaUserInfoType.Person person;
-    @XmlElement(name = "IndividualBusiness")
+    @XmlElement(name = "IndividualBusiness", namespace = "http://www.w3.org/2001/XMLSchema")
     protected EsiaUserInfoType.IndividualBusiness individualBusiness;
-    @XmlAttribute(name = "userId", required = true)
+    @XmlAttribute(name = "userId", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected BigInteger userId;
-    @XmlAttribute(name = "sessionIndex")
+    @XmlAttribute(name = "sessionIndex", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String sessionIndex;
-    @XmlAttribute(name = "sessionDate")
+    @XmlAttribute(name = "sessionDate", namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sessionDate;
 
@@ -277,7 +277,7 @@ public class EsiaUserInfoType {
     @XmlType(name = "")
     public static class IndividualBusiness {
 
-        @XmlAttribute(name = "personINN", required = true)
+        @XmlAttribute(name = "personINN", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected String personINN;
 
         /**
@@ -371,9 +371,9 @@ public class EsiaUserInfoType {
 
         @XmlElement(name = "DocumentIdentity", required = true)
         protected EsiaUserInfoType.Person.DocumentIdentity documentIdentity;
-        @XmlAttribute(name = "snils", required = true)
+        @XmlAttribute(name = "snils", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
         protected String snils;
-        @XmlAttribute(name = "personINN")
+        @XmlAttribute(name = "personINN", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected String personINN;
 
         /**
@@ -491,11 +491,11 @@ public class EsiaUserInfoType {
         @XmlType(name = "")
         public static class DocumentIdentity {
 
-            @XmlAttribute(name = "code", required = true)
+            @XmlAttribute(name = "code", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
             protected String code;
-            @XmlAttribute(name = "series")
+            @XmlAttribute(name = "series", namespace = "http://www.w3.org/2001/XMLSchema")
             protected String series;
-            @XmlAttribute(name = "number", required = true)
+            @XmlAttribute(name = "number", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
             protected String number;
 
             /**

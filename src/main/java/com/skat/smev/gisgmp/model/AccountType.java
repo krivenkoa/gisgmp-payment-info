@@ -47,9 +47,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AccountType {
 
-    @XmlElement(name = "Bank", required = true)
+    @XmlElement(name = "Bank", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected BankType bank;
-    @XmlAttribute(name = "accountNumber")
+    @XmlAttribute(name = "accountNumber", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String accountNumber;
 
     /**

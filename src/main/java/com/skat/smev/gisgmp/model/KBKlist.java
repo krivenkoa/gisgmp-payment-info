@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "KBKlist")
 public class KBKlist {
 
-    @XmlElement(name = "KBK", required = true)
+    @XmlElement(name = "KBK", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> kbk;
 
     /**

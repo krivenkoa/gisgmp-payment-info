@@ -49,9 +49,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PayersConditionsType {
 
-    @XmlElement(name = "PayerInn")
+    @XmlElement(name = "PayerInn", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> payerInn;
-    @XmlElement(name = "PayerIdentifier")
+    @XmlElement(name = "PayerIdentifier", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> payerIdentifier;
     @XmlElement(name = "TimeInterval", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected TimeIntervalType timeInterval;

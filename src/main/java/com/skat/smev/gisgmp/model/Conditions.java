@@ -56,17 +56,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public abstract class Conditions {
 
-    @XmlElement(name = "ChargesConditions")
+    @XmlElement(name = "ChargesConditions", namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.0.1")
     protected ChargesConditionsType chargesConditions;
-    @XmlElement(name = "PayersConditions")
+    @XmlElement(name = "PayersConditions", namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.0.1")
     protected PayersConditionsType payersConditions;
-    @XmlElement(name = "PaymentsConditions")
+    @XmlElement(name = "PaymentsConditions", namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.0.1")
     protected PaymentsConditionsType paymentsConditions;
-    @XmlElement(name = "TimeConditions")
+    @XmlElement(name = "TimeConditions", namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.0.1")
     protected TimeConditionsType timeConditions;
-    @XmlElement(name = "RefundsConditions")
+    @XmlElement(name = "RefundsConditions", namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.0.1")
     protected RefundsConditionsType refundsConditions;
-    @XmlAttribute(name = "kind", required = true)
+    @XmlAttribute(name = "kind", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String kind;
 
     /**

@@ -57,7 +57,7 @@ public class TimeConditionsType {
 
     @XmlElement(name = "TimeInterval", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1", required = true)
     protected TimeIntervalType timeInterval;
-    @XmlElement(name = "Beneficiary")
+    @XmlElement(name = "Beneficiary", namespace = "http://www.w3.org/2001/XMLSchema")
     protected List<TimeConditionsType.Beneficiary> beneficiary;
     @XmlElement(name = "KBKlist", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected KBKlist kbKlist;
@@ -162,9 +162,9 @@ public class TimeConditionsType {
     @XmlType(name = "")
     public static class Beneficiary {
 
-        @XmlAttribute(name = "inn", required = true)
+        @XmlAttribute(name = "inn", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected String inn;
-        @XmlAttribute(name = "kpp")
+        @XmlAttribute(name = "kpp", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected String kpp;
 
         /**

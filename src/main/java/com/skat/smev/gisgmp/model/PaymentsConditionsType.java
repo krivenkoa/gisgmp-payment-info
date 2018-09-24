@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PaymentsConditionsType {
 
-    @XmlElement(name = "PaymentId", required = true)
+    @XmlElement(name = "PaymentId", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> paymentId;
 
     /**

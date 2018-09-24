@@ -138,15 +138,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "BudgetIndexType", namespace = "http://roskazna.ru/gisgmp/xsd/BudgetIndex/2.0.1")
 public class BudgetIndexType {
 
-    @XmlAttribute(name = "status", required = true)
+    @XmlAttribute(name = "status", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String status;
-    @XmlAttribute(name = "paytReason", required = true)
+    @XmlAttribute(name = "paytReason", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String paytReason;
-    @XmlAttribute(name = "taxPeriod", required = true)
+    @XmlAttribute(name = "taxPeriod", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String taxPeriod;
-    @XmlAttribute(name = "taxDocNumber", required = true)
+    @XmlAttribute(name = "taxDocNumber", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String taxDocNumber;
-    @XmlAttribute(name = "taxDocDate", required = true)
+    @XmlAttribute(name = "taxDocDate", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String taxDocDate;
 
     /**

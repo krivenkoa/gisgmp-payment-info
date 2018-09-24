@@ -57,9 +57,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AdditionalDataType {
 
-    @XmlElement(name = "Name", required = true)
+    @XmlElement(name = "Name", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String name;
-    @XmlElement(name = "Value", required = true)
+    @XmlElement(name = "Value", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String value;
 
     /**

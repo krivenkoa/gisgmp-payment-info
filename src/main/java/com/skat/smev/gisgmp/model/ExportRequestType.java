@@ -47,9 +47,9 @@ public class ExportRequestType
     extends RequestType
 {
 
-    @XmlElement(name = "Paging")
+    @XmlElement(name = "Paging", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected PagingType paging;
-    @XmlAttribute(name = "originatorId")
+    @XmlAttribute(name = "originatorId", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String originatorId;
 
     /**

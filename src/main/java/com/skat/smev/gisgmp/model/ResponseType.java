@@ -62,15 +62,15 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class ResponseType {
 
-    @XmlAttribute(name = "Id", required = true)
+    @XmlAttribute(name = "Id", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     protected String id;
-    @XmlAttribute(name = "RqId", required = true)
+    @XmlAttribute(name = "RqId", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String rqId;
-    @XmlAttribute(name = "recipientIdentifier", required = true)
+    @XmlAttribute(name = "recipientIdentifier", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String recipientIdentifier;
-    @XmlAttribute(name = "timestamp", required = true)
+    @XmlAttribute(name = "timestamp", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar timestamp;
 

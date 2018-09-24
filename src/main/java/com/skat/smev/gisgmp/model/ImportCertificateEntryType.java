@@ -53,14 +53,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class ImportCertificateEntryType {
 
-    @XmlElement(name = "CertificateInfo", required = true)
+    @XmlElement(name = "CertificateInfo", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected CertificateInfoType certificateInfo;
-    @XmlAttribute(name = "Id", required = true)
+    @XmlAttribute(name = "Id", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
-    @XmlAttribute(name = "operation", required = true)
+    @XmlAttribute(name = "operation", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String operation;
 
     /**

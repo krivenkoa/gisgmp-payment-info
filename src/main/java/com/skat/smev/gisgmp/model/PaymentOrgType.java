@@ -61,11 +61,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PaymentOrgType {
 
-    @XmlElement(name = "Bank")
+    @XmlElement(name = "Bank", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected BankType bank;
-    @XmlElement(name = "UFK")
+    @XmlElement(name = "UFK", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String ufk;
-    @XmlElement(name = "Other")
+    @XmlElement(name = "Other", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String other;
 
     /**

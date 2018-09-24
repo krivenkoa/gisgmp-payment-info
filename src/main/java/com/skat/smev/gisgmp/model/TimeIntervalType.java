@@ -38,10 +38,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "TimeIntervalType")
 public class TimeIntervalType {
 
-    @XmlAttribute(name = "startDate", required = true)
+    @XmlAttribute(name = "startDate", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar startDate;
-    @XmlAttribute(name = "endDate", required = true)
+    @XmlAttribute(name = "endDate", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar endDate;
 

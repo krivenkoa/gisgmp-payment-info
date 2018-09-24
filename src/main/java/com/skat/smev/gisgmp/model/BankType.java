@@ -47,11 +47,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "BankType")
 public class BankType {
 
-    @XmlAttribute(name = "name")
+    @XmlAttribute(name = "name", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String name;
-    @XmlAttribute(name = "bik", required = true)
+    @XmlAttribute(name = "bik", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String bik;
-    @XmlAttribute(name = "correspondentBankAccount")
+    @XmlAttribute(name = "correspondentBankAccount", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String correspondentBankAccount;
 
     /**

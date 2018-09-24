@@ -53,14 +53,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ImportProtocolType")
 public class ImportProtocolType {
 
-    @XmlAttribute(name = "entityID", required = true)
+    @XmlAttribute(name = "entityID", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String entityID;
-    @XmlAttribute(name = "code", required = true)
+    @XmlAttribute(name = "code", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String code;
-    @XmlAttribute(name = "description", required = true)
+    @XmlAttribute(name = "description", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String description;
 
     /**

@@ -47,9 +47,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public abstract class DiscountType {
 
-    @XmlElement(name = "Value")
+    @XmlElement(name = "Value", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected float value;
-    @XmlElement(name = "Expiry", required = true)
+    @XmlElement(name = "Expiry", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String expiry;
 
     /**

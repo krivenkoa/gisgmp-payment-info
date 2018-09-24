@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "AttachmentRefType")
 public class AttachmentRefType {
 
-    @XmlAttribute(name = "attachmentId")
+    @XmlAttribute(name = "attachmentId", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String attachmentId;
 
     /**

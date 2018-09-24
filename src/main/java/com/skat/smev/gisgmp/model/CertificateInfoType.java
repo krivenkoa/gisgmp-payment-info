@@ -43,9 +43,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "CertificateInfoType")
 public class CertificateInfoType {
 
-    @XmlAttribute(name = "ownership", required = true)
+    @XmlAttribute(name = "ownership", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String ownership;
-    @XmlAttribute(name = "serialNumber")
+    @XmlAttribute(name = "serialNumber", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String serialNumber;
 
     /**

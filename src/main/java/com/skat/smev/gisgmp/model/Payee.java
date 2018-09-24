@@ -43,7 +43,7 @@ public class Payee
     extends OrganizationType
 {
 
-    @XmlElement(name = "OrgAccount", required = true)
+    @XmlElement(name = "OrgAccount", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected OrgAccount orgAccount;
 
     /**

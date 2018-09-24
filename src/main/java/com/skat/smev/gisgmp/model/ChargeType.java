@@ -129,13 +129,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class ChargeType {
 
-    @XmlElement(name = "LinkedChargesIdentifiers")
+    @XmlElement(name = "LinkedChargesIdentifiers", namespace = "http://www.w3.org/2001/XMLSchema")
     protected ChargeType.LinkedChargesIdentifiers linkedChargesIdentifiers;
-    @XmlElement(name = "Payee", required = true)
+    @XmlElement(name = "Payee", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.0.1")
     protected ChargeType.Payee payee;
-    @XmlElement(name = "Payer", required = true)
+    @XmlElement(name = "Payer", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected ChargeType.Payer payer;
-    @XmlElement(name = "BudgetIndex", required = true)
+    @XmlElement(name = "BudgetIndex", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/BudgetIndex/2.0.1")
     protected BudgetIndexType budgetIndex;
     @XmlElement(name = "ChangeStatus", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1", required = true)
     protected ChangeStatus changeStatus;
@@ -143,30 +143,30 @@ public class ChargeType {
     protected JAXBElement<? extends DiscountType> discount;
     @XmlElement(name = "AdditionalData", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<AdditionalDataType> additionalData;
-    @XmlAttribute(name = "supplierBillID", required = true)
+    @XmlAttribute(name = "supplierBillID", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String supplierBillID;
-    @XmlAttribute(name = "billDate", required = true)
+    @XmlAttribute(name = "billDate", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar billDate;
-    @XmlAttribute(name = "validUntil")
+    @XmlAttribute(name = "validUntil", namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar validUntil;
-    @XmlAttribute(name = "totalAmount", required = true)
+    @XmlAttribute(name = "totalAmount", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "unsignedLong")
     protected BigInteger totalAmount;
-    @XmlAttribute(name = "purpose", required = true)
+    @XmlAttribute(name = "purpose", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String purpose;
-    @XmlAttribute(name = "kbk", required = true)
+    @XmlAttribute(name = "kbk", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String kbk;
-    @XmlAttribute(name = "oktmo", required = true)
+    @XmlAttribute(name = "oktmo", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String oktmo;
-    @XmlAttribute(name = "deliveryDate")
+    @XmlAttribute(name = "deliveryDate", namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar deliveryDate;
-    @XmlAttribute(name = "paymentTerm")
+    @XmlAttribute(name = "paymentTerm", namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar paymentTerm;
-    @XmlAttribute(name = "origin")
+    @XmlAttribute(name = "origin", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String origin;
 
     /**
@@ -676,7 +676,7 @@ public class ChargeType {
         extends OrganizationType
     {
 
-        @XmlElement(name = "OrgAccount", required = true)
+        @XmlElement(name = "OrgAccount", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected OrgAccount orgAccount;
 
         /**
@@ -735,7 +735,7 @@ public class ChargeType {
         extends PayerType
     {
 
-        @XmlAttribute(name = "additionalPayerIdentifier")
+        @XmlAttribute(name = "additionalPayerIdentifier", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
         protected String additionalPayerIdentifier;
 
         /**

@@ -47,13 +47,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class OrganizationType {
 
-    @XmlAttribute(name = "name", required = true)
+    @XmlAttribute(name = "name", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.0.1")
     protected String name;
-    @XmlAttribute(name = "inn", required = true)
+    @XmlAttribute(name = "inn", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String inn;
-    @XmlAttribute(name = "kpp", required = true)
+    @XmlAttribute(name = "kpp", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String kpp;
-    @XmlAttribute(name = "ogrn")
+    @XmlAttribute(name = "ogrn", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String ogrn;
 
     /**

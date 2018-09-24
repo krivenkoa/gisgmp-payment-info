@@ -43,7 +43,7 @@ public class ImportPackageResponseType
     extends ResponseType
 {
 
-    @XmlElement(name = "ImportProtocol", required = true)
+    @XmlElement(name = "ImportProtocol", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<ImportProtocolType> importProtocol;
 
     /**

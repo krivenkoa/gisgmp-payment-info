@@ -44,9 +44,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "AccDocType")
 public class AccDocType {
 
-    @XmlAttribute(name = "accDocNo")
+    @XmlAttribute(name = "accDocNo", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String accDocNo;
-    @XmlAttribute(name = "accDocDate", required = true)
+    @XmlAttribute(name = "accDocDate", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar accDocDate;
 

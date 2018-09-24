@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PayerType {
 
-    @XmlAttribute(name = "payerIdentifier", required = true)
+    @XmlAttribute(name = "payerIdentifier", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String payerIdentifier;
 
     /**

@@ -50,9 +50,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "LsvFOType", namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.0.1")
 public class LsvFOType {
 
-    @XmlAttribute(name = "nameFO", required = true)
+    @XmlAttribute(name = "nameFO", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String nameFO;
-    @XmlAttribute(name = "accountNumberFO", required = true)
+    @XmlAttribute(name = "accountNumberFO", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String accountNumberFO;
 
     /**

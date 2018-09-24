@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ChargesConditionsType {
 
-    @XmlElement(name = "SupplierBillID", required = true)
+    @XmlElement(name = "SupplierBillID", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> supplierBillID;
     @XmlElement(name = "TimeInterval", namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected TimeIntervalType timeInterval;

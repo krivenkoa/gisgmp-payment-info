@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RefundsConditionsType {
 
-    @XmlElement(name = "RefundId", required = true)
+    @XmlElement(name = "RefundId", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected List<String> refundId;
 
     /**

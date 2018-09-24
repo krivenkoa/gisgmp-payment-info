@@ -51,9 +51,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "PagingType")
 public class PagingType {
 
-    @XmlAttribute(name = "pageNumber", required = true)
+    @XmlAttribute(name = "pageNumber", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected BigInteger pageNumber;
-    @XmlAttribute(name = "pageLength", required = true)
+    @XmlAttribute(name = "pageLength", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected BigInteger pageLength;
 
     /**

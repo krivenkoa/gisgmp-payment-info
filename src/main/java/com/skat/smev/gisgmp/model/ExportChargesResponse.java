@@ -59,9 +59,9 @@ public class ExportChargesResponse
 
     @XmlElement(name = "ChargeInfo", namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.0.1", required = true)
     protected List<ExportChargesResponse.ChargeInfo> chargeInfo;
-    @XmlAttribute(name = "hasMore", required = true)
+    @XmlAttribute(name = "hasMore", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected boolean hasMore;
-    @XmlAttribute(name = "needReRequest")
+    @XmlAttribute(name = "needReRequest", namespace = "http://www.w3.org/2001/XMLSchema")
     protected Boolean needReRequest;
 
     /**

@@ -59,9 +59,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ChangeStatus")
 public class ChangeStatus {
 
-    @XmlElement(name = "Reason")
+    @XmlElement(name = "Reason", namespace = "http://www.w3.org/2001/XMLSchema")
     protected String reason;
-    @XmlAttribute(name = "meaning", required = true)
+    @XmlAttribute(name = "meaning", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String meaning;
 
     /**

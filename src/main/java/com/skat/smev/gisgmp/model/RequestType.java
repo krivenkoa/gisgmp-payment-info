@@ -60,16 +60,16 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class RequestType {
 
-    @XmlAttribute(name = "Id", required = true)
+    @XmlAttribute(name = "Id", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     protected String id;
-    @XmlAttribute(name = "timestamp", required = true)
+    @XmlAttribute(name = "timestamp", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar timestamp;
-    @XmlAttribute(name = "senderIdentifier", required = true)
+    @XmlAttribute(name = "senderIdentifier", required = true, namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.0.1")
     protected String senderIdentifier;
-    @XmlAttribute(name = "senderRole", required = true)
+    @XmlAttribute(name = "senderRole", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
     protected String senderRole;
 
     /**
