@@ -1,0 +1,60 @@
+{
+	"id" : "G_cfe0c895-b33d-33bc-28d8-697f21d9e561",
+	"timestamp" : "2017-07-24",
+	"senderIdentifier" : "3eacb7",
+	"senderRole" : "1",
+	
+	"pageNumber" : "1", 
+	"pageLength" : "100",
+	"originatorId" : "aabf-1234-1111-ccaa-3333",
+	
+	"esiaUserInfo" : {
+		"userId":"123",
+    	"sessionIndex":"123",
+    	"sessionDate": "2017-07-24",
+    	"personSnils":"000-000-00 00",
+    	"personInn":"0000000000",
+    	"personDocCode":"12-123",
+    	"personDocSeries":"0000",
+    	"personDocNumber":"000000",
+    	"individualBusinessPersonINN":"000000000000"
+	},
+	
+	
+	"kind" : "CHARGESTATUS",
+	
+	"chargesConditions" : {
+		    "supplierBillID" : ["32117072411021588933"],
+    		"startDate" : "2017-07-24",
+    		"endDate" : "2017-07-24"
+	},
+	
+	"payersConditions" : {
+		"payerInn" : ["0000000000", "0000000001"],
+    	"payerIdentifier" : ["123123123", "123123123123"],
+    	"startDate" : "2017-07-24",
+    	"endDate" : "2017-07-24",
+    	"kbk" : ["12121212121212112121212", "1212121212121212112"]
+	},
+	
+	"paymentsConditions" : {
+		"paymentId" : ["4322342342", "234234234234"]
+	},
+	
+	"timeConditions" : {
+		"startDate" : "2017-07-24",
+    	"endDate" : "2017-07-24",
+    	"beneficiary" : [{
+    		"inn" : "000000000000",
+    		"kpp" : "000000000"
+    	}, {
+    		"inn" : "000000000001",
+    		"kpp" : "111111111"
+    	}],
+    	"kbk" : ["343434343434343434343", "34343434343434343"]
+	},
+	
+	"refundsConditions" : {
+		"refundId" : ["12332", "77777", "99999"]
+	}
+}
