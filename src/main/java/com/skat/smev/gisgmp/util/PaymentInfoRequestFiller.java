@@ -220,10 +220,10 @@ public class PaymentInfoRequestFiller {
     }
 
     private TimeIntervalType createTimeInterval(String startDate, String endDate){
-        TimeIntervalType timeInterval = factory.createTimeIntervalType();
 
         if ( !StringUtil.isNullOrEmpty(startDate) ||
                 !StringUtil.isNullOrEmpty(endDate)) {
+            TimeIntervalType timeInterval = factory.createTimeIntervalType();
             try{
                 timeInterval.setStartDate(
                         DateUtil.parseXMLGregorianCalendar(startDate,
@@ -238,7 +238,8 @@ public class PaymentInfoRequestFiller {
             catch (DatatypeConfigurationException ex){
                 LOGGER.error("Error while XMLGregorianCalendar created", ex);
             }
+            return timeInterval;
         }
-        return timeInterval;
+        return null;
     }
 }
