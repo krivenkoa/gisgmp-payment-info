@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/fns")
+@RequestMapping("/gisgmp")
 public class Smev3Controller {
 
 
