@@ -28,7 +28,10 @@ public class ResponseMessageModelFiller {
             model.setBillDate(chargeInfo.getBillDate().toString());
             model.setBudgetIndex(getBudgetIndexModel(chargeInfo));
             model.setChangeStatus(getChangeStatusModel(chargeInfo));
-            model.setDeliveryDate(chargeInfo.getDeliveryDate().toString());
+
+            if (chargeInfo.getDeliveryDate() != null) {
+                model.setDeliveryDate(chargeInfo.getDeliveryDate().toString());
+            }
             model.setDiscount(getDiscountModel(chargeInfo));
             model.setKbk(chargeInfo.getKbk());
             model.setLinkedChargesIdentifiers(getLinkedChargesIdentifiersModel(chargeInfo));
@@ -36,11 +39,20 @@ public class ResponseMessageModelFiller {
             model.setOrigin(chargeInfo.getOrigin());
             model.setPayee(getPayeeModel(chargeInfo));
             model.setPayer(getPayerModel(chargeInfo));
-            model.setPaymentTerm(chargeInfo.getPaymentTerm().toString());
+
+            if (chargeInfo.getPaymentTerm() != null){
+                model.setPaymentTerm(chargeInfo.getPaymentTerm().toString());
+            }
             model.setPurpose(chargeInfo.getPurpose());
             model.setSupplierBillID(chargeInfo.getSupplierBillID());
-            model.setTotalAmount(chargeInfo.getTotalAmount().toString());
-            model.setValidUntil(chargeInfo.getValidUntil().toString());
+
+            if(chargeInfo.getTotalAmount() != null){
+                model.setTotalAmount(chargeInfo.getTotalAmount().toString());
+            }
+
+            if (chargeInfo.getValidUntil() != null){
+                model.setValidUntil(chargeInfo.getValidUntil().toString());
+            }
             chargeInfoList.add(model);
         }
 
