@@ -369,7 +369,7 @@ public class EsiaUserInfoType {
     })
     public static class Person {
 
-        @XmlElement(name = "DocumentIdentity", required = true)
+        @XmlElement(name = "DocumentIdentity", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
         protected EsiaUserInfoType.Person.DocumentIdentity documentIdentity;
         @XmlAttribute(name = "snils", required = true, namespace = "http://www.w3.org/2001/XMLSchema")
         protected String snils;
