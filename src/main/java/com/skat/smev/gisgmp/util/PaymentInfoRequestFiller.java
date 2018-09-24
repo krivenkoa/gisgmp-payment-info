@@ -98,7 +98,39 @@ public class PaymentInfoRequestFiller {
                 fillRefundsConditions(model.getRefundsConditions(), conditions);
             }
 
+            if (model.getTimeConditions() != null){
+                fillTimeConditions(model.getTimeConditions(), conditions);
+            }
+
             req.setChargesExportConditions(conditions);
+        }
+    }
+
+    public void fillTimestamp(ExportChargesRequest req, String timestamp){
+        if (!StringUtil.isNullOrEmpty(timestamp)){
+            try{
+                req.setTimestamp(
+                        DateUtil.parseXMLGregorianCalendar(timestamp,
+                                "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
+            }
+            catch (ParseException ex){
+                LOGGER.error("Error while parse String to XMLGregorianCalendar", ex);
+            }
+            catch (DatatypeConfigurationException ex){
+                LOGGER.error("Error while XMLGregorianCalendar created", ex);
+            }
+        }
+    }
+
+    public void fillPaging(ExportChargesRequest req, RequestModel model){
+        if (model != null){
+            if (!StringUtil.isNullOrEmpty(model.getPageLength()) ||
+                    !StringUtil.isNullOrEmpty(model.getPageNumber())) {
+                PagingType pagingType = factory.createPagingType();
+                pagingType.setPageLength(new BigInteger(model.getPageLength()));
+                pagingType.setPageNumber(new BigInteger(model.getPageNumber()));
+                req.setPaging(pagingType);
+            }
         }
     }
 
@@ -157,6 +189,34 @@ public class PaymentInfoRequestFiller {
         conditions.setRefundsConditions(refunds);
     }
 
+    private void fillTimeConditions(TimeConditionsModel model, ChargesExportConditions conditions){
+
+        TimeConditionsType time = factory.createTimeConditionsType();
+
+        if (model.getKbk() != null) {
+            KBKlist kbklist = factory.createKBKlist();
+            kbklist.getKBK().addAll(model.getKbk());
+            time.setKBKlist(kbklist);
+        }
+
+        TimeIntervalType timeInterval = createTimeInterval(model.getStartDate(), model.getEndDate());
+        if(timeInterval != null) {
+            time.setTimeInterval(timeInterval);
+        }
+
+        if (model.getBeneficiary() != null) {
+            for (BeneficiaryModel beneficiaryModel : model.getBeneficiary()) {
+                if (!StringUtil.isNullOrEmpty(beneficiaryModel.getInn()) ||
+                        !StringUtil.isNullOrEmpty(beneficiaryModel.getKpp())) {
+                    TimeConditionsType.Beneficiary beneficiary = factory.createTimeConditionsTypeBeneficiary();
+                    time.getBeneficiary().add(beneficiary);
+                }
+            }
+        }
+
+        conditions.setTimeConditions(time);
+    }
+
     private TimeIntervalType createTimeInterval(String startDate, String endDate){
         TimeIntervalType timeInterval = factory.createTimeIntervalType();
 
@@ -165,8 +225,7 @@ public class PaymentInfoRequestFiller {
             try{
                 timeInterval.setStartDate(
                         DateUtil.parseXMLGregorianCalendar(startDate,
-                                "yyyy-MM-dd'T'HH:mm:ss.SSSz")
-                );
+                                "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
                 timeInterval.setEndDate(
                         DateUtil.parseXMLGregorianCalendar(endDate,
                                 "yyyy-MM-dd'T'HH:mm:ss.SSSz"));

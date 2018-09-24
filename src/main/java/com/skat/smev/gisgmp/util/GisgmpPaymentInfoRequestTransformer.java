@@ -26,6 +26,16 @@ public class GisgmpPaymentInfoRequestTransformer {
         reqFiller.fillEsiaUserInfo(exportChargesReq, model.getEsiaUserInfo());
         reqFiller.fillChargesExportConditions(exportChargesReq, model);
 
+        // fill RequestType
+        exportChargesReq.setId(model.getId());
+        exportChargesReq.setSenderIdentifier(model.getSenderIdentifier());
+        exportChargesReq.setSenderRole(model.getSenderRole());
+        reqFiller.fillTimestamp(exportChargesReq, model.getTimestamp());
+
+        // fill ExportRequestType
+        exportChargesReq.setOriginatorId(model.getOriginatorId());
+        reqFiller.fillPaging(exportChargesReq, model);
+
         return exportChargesReq;
     }
 

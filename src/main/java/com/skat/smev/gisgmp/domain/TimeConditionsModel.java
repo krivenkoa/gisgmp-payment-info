@@ -5,8 +5,7 @@ import java.util.List;
 public class TimeConditionsModel {
     private String startDate;
     private String endDate;
-    private String beneficiaryInn;
-    private String beneficiaryKpp;
+    private List<BeneficiaryModel> beneficiary;
     private List<String> kbk;
 
     public String getStartDate() {
@@ -17,15 +16,9 @@ public class TimeConditionsModel {
         return endDate;
     }
 
-    public String getBeneficiaryInn() {
-        return beneficiaryInn;
-    }
-
-    public String getBeneficiaryKpp() {
-        return beneficiaryKpp;
-    }
-
     public List<String> getKbk() {
         return kbk;
     }
+
+    public List<BeneficiaryModel> getBeneficiary() { return beneficiary; }
 }

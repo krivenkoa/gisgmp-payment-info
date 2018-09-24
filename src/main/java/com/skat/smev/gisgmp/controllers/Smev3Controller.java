@@ -37,7 +37,7 @@ public class Smev3Controller {
      * @return сведения об успешной отправке либо об ошибке отправки
      * @throws Exception
      */
-        @PostMapping("/payinfo/response")
+    @PostMapping("/payinfo/response")
     public String sendPaymentInfoResponse(@RequestBody AdapterResponseModel adapterResponse) throws Exception {
         return smev3Service.sendExportChargesResponse(adapterResponse);
     }

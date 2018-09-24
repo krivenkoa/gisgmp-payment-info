@@ -24,6 +24,12 @@ public class RequestModel {
 	private String pageNumber;
 	private String pageLength;
 	private String originatorId;
+
+
+	private String id;
+	private String timestamp;
+	private String senderIdentifier;
+	private String senderRole;
 	/**/
 	private List<AttachmentModel> attachments;
 
@@ -38,6 +44,15 @@ public class RequestModel {
 	public String getKind() {
 		return kind;
 	}
+
+
+	public String getId() { return id; }
+
+	public String getTimestamp() { return timestamp; }
+
+	public String getSenderIdentifier() { return senderIdentifier; }
+
+	public String getSenderRole() { return senderRole; }
 
 	public String getPageNumber() {
 		return pageNumber;
@@ -63,9 +78,7 @@ public class RequestModel {
 		return paymentsConditions;
 	}
 
-	public TimeConditionsModel getTimeConditions() {
-		return timeConditions;
-	}
+	public TimeConditionsModel getTimeConditions() { return timeConditions; }
 
 	public RefundsConditionsModel getRefundsConditions() {
 		return refundsConditions;
