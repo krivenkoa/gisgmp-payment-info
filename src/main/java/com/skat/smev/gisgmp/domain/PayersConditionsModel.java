@@ -1,5 +1,6 @@
 package com.skat.smev.gisgmp.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PayersConditionsModel {
@@ -10,10 +11,16 @@ public class PayersConditionsModel {
     private List<String> kbk;
 
     public List<String> getPayerInn() {
+        if (payerInn == null) {
+            payerInn = new ArrayList<String>();
+        }
         return payerInn;
     }
 
     public List<String> getPayerIdentifier() {
+        if (payerIdentifier == null) {
+            payerIdentifier = new ArrayList<String>();
+        }
         return payerIdentifier;
     }
 
@@ -26,6 +33,9 @@ public class PayersConditionsModel {
     }
 
     public List<String> getKbk() {
+        if (kbk == null) {
+            kbk = new ArrayList<String>();
+        }
         return kbk;
     }
 }

@@ -3,10 +3,11 @@ package com.skat.smev.gisgmp.util;
 
 import com.skat.smev.gisgmp.domain.*;
 import org.apache.log4j.Logger;
-import com.skat.smev.gisgmp.domain.*;
 import com.skat.smev.gisgmp.model.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -15,15 +16,19 @@ import javax.xml.datatype.DatatypeFactory;
 public class GisgmpPaymentInfoRequestTransformer {
     private static final Logger LOGGER = Logger.getLogger(GisgmpPaymentInfoRequestTransformer.class.getName());
 
-    /*ИНН ФЛ: Запрос*/
+    /*Gisgmp: Запрос*/
     public static ExportChargesRequest createExportChargesRequest(RequestModel model){
         ObjectFactory exportChargesOF = new ObjectFactory();
+        PaymentInfoRequestFiller reqFiller = new PaymentInfoRequestFiller(exportChargesOF);
 
-        // create InnFLReq
+        // create Charges request
         ExportChargesRequest exportChargesReq = exportChargesOF.createExportChargesRequest();
+        reqFiller.fillEsiaUserInfo(exportChargesReq, model.getEsiaUserInfo());
+        reqFiller.fillChargesExportConditions(exportChargesReq, model);
 
         return exportChargesReq;
     }
+
 
   /**
      * Метод выполняет преобразование ответа от СМЭВ-адаптера в формат {@link BaseMessageModel}
@@ -38,10 +43,8 @@ public class GisgmpPaymentInfoRequestTransformer {
         if(adapterResponseModel.getResponse() != null){
             String xml = Base64Util.getXmlFromBase64(adapterResponseModel.getResponse());
             final ExportChargesResponse response = XmlUtil.unmarshal(xml, ExportChargesResponse.class);
-            ResponseMessageModel responseMessageModel = new ResponseMessageModel();
-
-            responseMessageModel.setMessageId(adapterResponseModel.getMessageId());
-            return responseMessageModel;
+            ResponseMessageModelFiller filler = new ResponseMessageModelFiller();
+            return filler.createResponseMessageModel(response, adapterResponseModel);
         } else if(adapterResponseModel.getRejects() != null && !adapterResponseModel.getRejects().isEmpty()){
             return createRejectMessageModel(adapterResponseModel);
         } else {

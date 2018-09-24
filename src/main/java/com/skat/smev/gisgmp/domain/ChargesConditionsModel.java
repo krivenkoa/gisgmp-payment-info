@@ -1,5 +1,6 @@
 package com.skat.smev.gisgmp.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChargesConditionsModel {
@@ -8,6 +9,9 @@ public class ChargesConditionsModel {
     private String endDate;
 
     public List<String> getSupplierBillID() {
+        if (supplierBillID == null) {
+            supplierBillID = new ArrayList<String>();
+        }
         return supplierBillID;
     }
 

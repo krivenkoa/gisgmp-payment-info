@@ -22,5 +22,4 @@ public class JsonUtil {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(json, type);
     }
-
 }

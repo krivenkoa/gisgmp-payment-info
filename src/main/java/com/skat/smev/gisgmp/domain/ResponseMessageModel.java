@@ -13,26 +13,7 @@ public class ResponseMessageModel extends BaseMessageModel {
 	private String rqId;
 	private String recipientIdentifier;
 	private String timestamp;
-	//
-	/*protected LinkedChargesIdentifiers linkedChargesIdentifiers;
-	protected ChargeType.Payee payee;
-	protected ChargeType.Payer payer;
-	protected BudgetIndexType budgetIndex;
-	protected ChangeStatus changeStatus;
-	protected JAXBElement<? extends DiscountType> discount;
-	protected List<AdditionalDataType> additionalData;
-	protected String supplierBillID;
-	protected String billDate;
-	protected String validUntil;
-	protected String totalAmount;
-	protected String purpose;
-	protected String kbk;
-	protected String oktmo;
-	protected String deliveryDate;
-	protected String paymentTerm;
-	protected String origin;
-	*/
-	//
+
 	private List<String> attachments;
 
 	public String getHasMore() {
@@ -81,6 +62,14 @@ public class ResponseMessageModel extends BaseMessageModel {
 
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
+	}
+
+	public List<ChargeInfoModel> getChargeInfo(){
+		if (chargeInfo == null) {
+			chargeInfo = new ArrayList<ChargeInfoModel>();
+		}
+
+		return chargeInfo;
 	}
 
 	public List<String> getAttachments() {
