@@ -27,7 +27,7 @@ public class PaymentInfoRequestFiller {
                 try{
                     esiaUserInfo.setSessionDate(
                             DateUtil.parseXMLGregorianCalendar(model.getSessionDate(),
-                                    "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
+                                    "yyyy-MM-dd"));
                 }
                 catch (ParseException ex){
                     LOGGER.error("Error while parse String to XMLGregorianCalendar", ex);
@@ -111,7 +111,7 @@ public class PaymentInfoRequestFiller {
             try{
                 req.setTimestamp(
                         DateUtil.parseXMLGregorianCalendar(timestamp,
-                                "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
+                                "yyyy-MM-dd"));
             }
             catch (ParseException ex){
                 LOGGER.error("Error while parse String to XMLGregorianCalendar", ex);
@@ -162,7 +162,7 @@ public class PaymentInfoRequestFiller {
 
         if(model.getPayerIdentifier() != null)
         {
-            model.getPayerIdentifier().addAll(model.getPayerIdentifier());
+            payers.getPayerIdentifier().addAll(model.getPayerIdentifier());
         }
 
         if(model.getPayerInn() != null){
@@ -209,6 +209,8 @@ public class PaymentInfoRequestFiller {
                 if (!StringUtil.isNullOrEmpty(beneficiaryModel.getInn()) ||
                         !StringUtil.isNullOrEmpty(beneficiaryModel.getKpp())) {
                     TimeConditionsType.Beneficiary beneficiary = factory.createTimeConditionsTypeBeneficiary();
+                    beneficiary.setKpp(beneficiaryModel.getKpp());
+                    beneficiary.setInn(beneficiaryModel.getInn());
                     time.getBeneficiary().add(beneficiary);
                 }
             }
@@ -225,10 +227,10 @@ public class PaymentInfoRequestFiller {
             try{
                 timeInterval.setStartDate(
                         DateUtil.parseXMLGregorianCalendar(startDate,
-                                "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
+                                "yyyy-MM-dd"));
                 timeInterval.setEndDate(
                         DateUtil.parseXMLGregorianCalendar(endDate,
-                                "yyyy-MM-dd'T'HH:mm:ss.SSSz"));
+                                "yyyy-MM-dd"));
             }
             catch (ParseException ex){
                 LOGGER.error("Error while parse String to XMLGregorianCalendar", ex);
